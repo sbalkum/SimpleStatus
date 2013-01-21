@@ -1,0 +1,26 @@
+﻿{
+	"SMTPHost":"smtp.domain.com",
+	"SMTPPort":587,
+	"SMTPIsSsl":false,
+	"SMTPUsername":"username@domain.com",
+	"SMTPPassword":"password",
+	"Checks":
+	[
+		{
+			"Name":"www.website.com",
+			"Kind":"HTTP",
+			"StatFile":"website.json",
+			"Settings":{"Url":"http://www.website.com","Check Phrase":"this text is on home page"},
+			"AlertOnConsecutiveErrors":2,
+			"Alert":"alertemail@domain.com"
+		},
+		{
+			"Name":"POP3 Account",
+			"Kind":"POP3",
+			"StatFile":"POP.json",
+			"Settings":{"Host":"mail.domain.com","Username":"username@domain.com","Password":"password"},
+			"AlertOnConsecutiveErrors":3,
+			"Alert":"alertemail@domain.com"
+		}
+	]
+}
